@@ -2,26 +2,17 @@ const Sequelize = require('sequelize');
 const sqlDatabase = require('../../config/database');
 
 const User = sqlDatabase.define('user', {
-  idUser: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
+  googleId:{
+    type:Sequelize.STRING,
+    alloNull:false,
     primaryKey: true,
   },
-  username: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  password: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  email: {
+  displayName: {
     type: Sequelize.STRING,
     allowNull: false,
   },
   lastExtention:{ 
-    type:Sequelize.DATE,
+    type:Sequelize.DATEONLY,
     allowNull: false,
   },
 });
