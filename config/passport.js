@@ -19,7 +19,10 @@ module.exports = function(passport){
     }
     try{
         // let user= await User.findByPk(profile.id)
-        let user = await User.findOne({ googleId: profile.id })
+        let user = await User.findOne({
+            where:{ 
+                googleId: profile.id }
+            })
 
         if(user){
             done(null, user)
