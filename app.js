@@ -45,6 +45,11 @@ app.use(passport.session())
 //Set static folder
 app.use(express.static(path.join(__dirname,'public')));
 
+//Parser
+app.use(bodyParser.json());                        
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 // app.get('/',(req, res) => res.send('INDEX'));
@@ -53,6 +58,8 @@ app.use('/',require('./authentication/routes/index'))
 app.use('/auth',require('./authentication/routes/auth'))
 
 app.use('/users',require('./authentication/routes/users'));
+
+app.use('/renew',require('./update/routes/renew'));
 
 const PORT = process.env.PORT || 5000;
 

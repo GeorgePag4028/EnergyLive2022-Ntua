@@ -10,9 +10,13 @@ router.get('/', ensureGuest, (req,res)=>{
 
 
 router.get('/dashboard',ensureAuth, (req,res)=>{
+    let days = new Date();
+    days.setDate(days.getDate());
+    // days.setDate(days.getDate()-req.user.lastExtention);
     res.render('dashboard',{
         name: req.user.displayName,
         date : req.user.lastExtention,
+        remaining : days,
 
     })
 })
