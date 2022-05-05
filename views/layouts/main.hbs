@@ -10,6 +10,16 @@
 
   <link rel="stylesheet" href="css/style.css">
   <title>Energy Live</title>
+  <script type="text/javascript"> 
+  function toggle(theform) { 
+      document.getElementById("form1").style.display = "none"; 
+      document.getElementById("form2").style.display = "none"; 
+      document.getElementById("form3").style.display = "none"; 
+      if (theform =='actualTotalLoad' )             {document.getElementById("form1").style.display = "block";} 
+      if (theform =='aggregatedGenerationPerType' ) {document.getElementById("form2").style.display = "block";} 
+      if (theform =='physicalFlows' )               {document.getElementById("form3").style.display = "block";} 
+  } 
+  </script>
 </head>
 
 <body>

@@ -2,5 +2,82 @@
 <h3>Welcome {{name}}</h3>
 <h4>Has {{date}} left</h4>
 <h5>Current {{remaining}} left</h5>
+<h4>Last Login {{lastLogin}} </h4>
+<h5>Email: {{email}} </h5>
 <p>Here you are</p>
 
+
+<form id="form1" action="/dashboardac" method="POST" style="display: block;">
+    <label>Date</label>
+    <input type="date" id="start" name="tripStart"
+       value="2018-07-22">
+    <div>
+        <label>Quanity</label>
+        <select name ="dataset" id = "dataset" onchange="toggle(this.value);">
+            <option value="actualTotalLoad" selected>Actual Total Load</option>
+            <option value="aggregatedGenerationPerType">Aggregated Generation Per Type</option>
+            <option value="physicalFlows">Physical Flows</option>
+        </select>
+        <label>Country</label>
+        <select name="country" id="country">
+            <option value="greece">Greece</option>
+            <option value="italy">Italy</option>
+            <option value="spain">Spain</option>
+        </select>
+    </div>
+    <button>Refresh</button>
+</form>
+
+<form id="form2" action="/dashboardag" method="POST" style="display: none;">
+    <label>Date</label>
+    <input type="date" id="start" name="tripStart"
+       value="2018-07-22">
+    <div>
+        <label>Quanity</label>
+        <select name ="dataset" id = "dataset" onchange="toggle(this.value);">
+            <option value="actualTotalLoad">Actual Total Load</option>
+            <option value="aggregatedGenerationPerType" selected>Aggregated Generation Per Type</option>
+            <option value="physicalFlows">Physical Flows</option>
+        </select>
+        <label>Country</label>
+        <select name="country" id="country">
+            <option value="greece">Greece</option>
+            <option value="italy">Italy</option>
+            <option value="spain">Spain</option>
+        </select>
+        <label>Generation Type</label>
+        <select name="generationType" id="country">
+            <option value="naturalGas">Natural Gas</option>
+            <option value="petrol">Petrol</option>
+            <option value="sun">Sun</option>
+        </select>
+    </div>
+    <button>Refresh</button>
+</form>
+
+<form id="form3" action="/dashboardp" method="POST" style="display: none;">
+    <label>Date</label>
+    <input type="date" id="start" name="tripStart"
+       value="2018-07-22">
+    <div>
+        <label>Quanity</label>
+        <select name ="dataset" id = "dataset" onchange="toggle(this.value);">
+            <option value="actualTotalLoad">Actual Total Load</option>
+            <option value="aggregatedGenerationPerType">Aggregated Generation Per Type</option>
+            <option value="physicalFlows" selected>Physical Flows</option>
+        </select>
+        <label>Country (from)</label>
+        <select name="countryfrom" id="countryfrom">
+            <option value="greece">Greece</option>
+            <option value="italy">Italy</option>
+            <option value="spain">Spain</option>
+        </select>
+        <label>Country (to)</label>
+        <select name="countryto" id="countryto">
+            <option value="bulagria">Bulgaria</option>
+            <option value="italy">Italy</option>
+            <option value="spain">Spain</option>
+        </select>
+    </div>
+    <button>Refresh</button>
+</form>

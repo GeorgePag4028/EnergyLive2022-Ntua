@@ -11,6 +11,14 @@ const User = sqlDatabase.define('user', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  email: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  lastLogin: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
   lastExtention:{ 
     type:Sequelize.DATEONLY,
     allowNull: false,

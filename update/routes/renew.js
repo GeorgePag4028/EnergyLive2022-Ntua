@@ -12,17 +12,25 @@ router.get('/', ensureAuth, (req,res) =>{
 })
 
 router.post('/extentDays',ensureAuth, (req, res)=>{
-    var d = new Date();
-    d.setDate(d.getDate()+req.body.extend_days)
-    // var datestring = d.getFullYear() +"-" +(d.getMonth()+1)+ "-" + d.getDate()
-    // var datedate = Date.parse(datestring)
-    console.log(req.body.extend_days);
-    console.log(d)
-    User.update({
-        lastExtention: d},
-        {where:{googleId: req.user.googleId}  }
-    )
-    return res.redirect('/dashboard');  
+    console.log(req.user.googleId)
+    User.findOne({ where: { googleId: req.user.googleId } })
+    .then (user => {
+        var d = new Date(user.lastExtention);
+        d.setDate(d.getDate()+ Number(req.body.extend_days));
+        user.update({lastExtention: d,})
+        .then(result => {
+          console.log("Updated user");
+          return res.redirect('/dashboard');  
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(400).send('An error occured.');
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(400).send('An error occured.');
+    });
 })
 
 module.exports = router;
