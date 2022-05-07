@@ -16,6 +16,9 @@ body {
   margin: 0;
   color: #333;
   background: #f4f4f4;
+  justify-content: center;
+  align-items : center;
+  padding: 10px;
 }
 
 ul {
@@ -302,3 +305,118 @@ label {
   }
 }
 
+.container1{
+  max-width: 300px;
+  width: 100%;
+  background: #64a5b7;
+  /* background: #abc; */
+  padding : 25px 30px;
+  border-radius: 5px;
+}
+.container1 .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container1 .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  height: 3px;
+  width: 30px;
+  background: #fff;
+}
+
+.upperdata{ 
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding : 5px ;
+  border-radius: 5px;
+  background: #65a5b7;
+}
+
+.downdata{
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding : 5px ;
+
+}
+.container2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin-top: 1.2rem;
+  width:100%;
+
+}
+.downloadbuttons{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: auto; 
+  margin-right: 0;
+}
+
+.button-38 {
+  margin-top: 0.5rem;
+  background-color: #FFFFFF;
+  border: 0;
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 0.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-38:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-38:focus-visible {
+  box-shadow: none;
+}
+
+.container3{
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.container3 .renewdays{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding : 5px ;
+  border-radius: 5px;
+  background: #65a5b7;
+}

@@ -1,11 +1,14 @@
-<h6>Renew</h3>
-<h3>Welcome {{name}}</h3>
-<h4>Has {{date}} left</h4>
-<p>Here you are</p>
-
+<div class="container3">
+<h5>Name: {{name}}</h5>
+<h5>Email: {{email}}</h5>
+<h5>Last login: {{lastLogin}}</h5>
+<div class="renewdays">
+<h5>Last days: {{days}}</h5>
 <form action="/renew/extentDays" method="POST">
     <label>Extend by(days):</label>
     <input type="number" name = "extend_days">
-    <button>Extend</button>
+    <button class="button-38">Extend</button>
     
 </form>
+</div>
+</div>

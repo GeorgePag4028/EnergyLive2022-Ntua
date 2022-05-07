@@ -17,10 +17,12 @@ router.get('/dashboard',ensureAuth, (req,res)=>{
         let date2 = new Date(user.lastExtention);
         var Difference_In_Time = date2.getTime() - date1.getTime();
         var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+        var date3 = new Date(user.lastLogin)
+        var test = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(date3);
         res.render('dashboard',{
             name: user.displayName,
             date : user.lastExtention,
-            lastLogin : user.lastLogin,
+            lastLogin : test,
             email : user.email, 
             remaining : Math.floor(Difference_In_Days),
         })

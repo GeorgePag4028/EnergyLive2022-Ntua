@@ -4,9 +4,19 @@ const { ensureAuth, ensureGuest } = require('../../authentication/middleware/aut
 const User = require('../../authentication/models/User');
 
 router.get('/', ensureAuth, (req,res) =>{
+    let date1 = new Date();
+    let date2 = new Date(req.user.lastExtention);
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    var date3 = new Date(req.user.lastLogin)
+    var test = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(date3);
+    
     res.render('renew',{
         name: req.user.displayName,
         date : req.user.lastExtention,
+        email: req.user.email,
+        lastLogin: test,
+        days: Math.floor(Difference_In_Days),
         layout : 'main',
     })
 })
