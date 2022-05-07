@@ -19,6 +19,7 @@ router.get('/dashboard',ensureAuth, (req,res)=>{
         var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
         var date3 = new Date(user.lastLogin)
         var test = new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(date3);
+        // do query 
         res.render('dashboard',{
             name: user.displayName,
             date : user.lastExtention,
@@ -34,9 +35,14 @@ router.get('/dashboard',ensureAuth, (req,res)=>{
 })
 
 router.post('/dashboardac', ensureAuth, (req,res)=>{
+    // drop database 
+    // update everytime a new file is uploaded drop database 
     console.log(req.body.tripStart)
     console.log(req.body.dataset)
     console.log(req.body.country)
+    // Connect to ftp 
+    // ask for csv file with those attributes
+    // return them and same them to database 
     return res.redirect('/dashboard');  
 })
 
