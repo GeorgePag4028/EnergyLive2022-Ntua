@@ -5,6 +5,10 @@ const path = require('path')
 const dotenv = require('dotenv')
 const passport = require('passport')
 const session = require('express-session')
+const User = require('./authentication/models/User')
+const ActualTotalLoad = require('./ftpCommunication/models/ActualTotalLoad')
+const AggregatedGenerationPerType= require('./ftpCommunication/models/AggregatedGenerationPerType')
+const PhysicalFlows= require('./ftpCommunication/models/PhysicalFlows')
 
 // Load config
 dotenv.config({path : './config/config.env'})
@@ -21,9 +25,12 @@ db.authenticate()
     .then(()=> console.log('Database connected ...'))
     .catch(err => console.log('Error: '+ err))
 
-db.sync({force:true})
+// db.sync({force:true})
 // db.sync()
-
+ActualTotalLoad.sync({force:true})
+User.sync({force:true})
+AggregatedGenerationPerType.sync({force:true})
+PhysicalFlows.sync({force:true})
 
 const app = express();
 
@@ -56,6 +63,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/',require('./authentication/routes/index'))
 app.use('/auth',require('./authentication/routes/auth'))
+app.use('/communication',require('./ftpCommunication/routes/comm'))
 
 app.use('/users',require('./authentication/routes/users'));
 
