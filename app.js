@@ -10,6 +10,7 @@ const ActualTotalLoad = require('./ftpCommunication/models/ActualTotalLoad')
 const AggregatedGenerationPerType= require('./ftpCommunication/models/AggregatedGenerationPerType')
 const PhysicalFlows= require('./ftpCommunication/models/PhysicalFlows')
 
+global.__basedir =__dirname+"/..";
 // Load config
 dotenv.config({path : './config/config.env'})
 
@@ -27,10 +28,10 @@ db.authenticate()
 
 // db.sync({force:true})
 // db.sync()
-ActualTotalLoad.sync({force:true})
-User.sync({force:true})
-AggregatedGenerationPerType.sync({force:true})
-PhysicalFlows.sync({force:true})
+// ActualTotalLoad.sync({force:true})
+// User.sync({force:true})
+// AggregatedGenerationPerType.sync({force:true})
+// PhysicalFlows.sync({force:true})
 
 const app = express();
 

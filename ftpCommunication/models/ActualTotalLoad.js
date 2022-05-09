@@ -2,39 +2,39 @@ const Sequelize = require('sequelize');
 const sqlDatabase = require('../../config/database');
 
 const ActualTotalLoad = sqlDatabase.define('actualTotalLoad', {
-    dateTime :{
+    DateTime :{
         type:Sequelize.DATE,
         alloNull:false,
         primaryKey: true,
     },
-    resolutionCode:{
+    ResolutionCode:{
         type:Sequelize.STRING,
-        allonull:false,
+        // allonull:false,
     },
-    areaCode:{
+    AreaCode:{
         type:Sequelize.STRING,
-        allonull:false,
+        // allonull:false,
     },
-    areaTypeCode:{
+    AreaTypeCode:{
         type:Sequelize.STRING,
-        allonull:false,
+        // allonull:false,
     },
-    areaName:{
+    AreaName:{
         type:Sequelize.STRING,
         allonull:false,
         primaryKey: true,
     },
-    mapCode:{
+    MapCode:{
         type:Sequelize.STRING,
-        allonull:false,
+        // allonull:false,
     },
-    totalLoadValue:{
+    TotalLoadValue:{
         type:Sequelize.FLOAT,
-        allonull:false,
+        // allonull:false,
     },
-    updateTime:{
+    UpdateTime:{
         type:Sequelize.DATE,
-        allonull:false,
+        // allonull:false,
     },
 });
 
