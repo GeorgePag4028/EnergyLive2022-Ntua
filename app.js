@@ -9,6 +9,7 @@ const User = require('./authentication/models/User')
 const ActualTotalLoad = require('./ftpCommunication/models/ActualTotalLoad')
 const AggregatedGenerationPerType= require('./ftpCommunication/models/AggregatedGenerationPerType')
 const PhysicalFlows= require('./ftpCommunication/models/PhysicalFlows')
+//const ShowDir= require('./ftpCommunication/controllers/actualTotalLoad/ftpsa')
 
 global.__basedir =__dirname+"/..";
 // Load config
@@ -26,7 +27,7 @@ db.authenticate()
     .then(()=> console.log('Database connected ...'))
     .catch(err => console.log('Error: '+ err))
 
-// db.sync({force:true})
+db.sync({force:true})
 // db.sync()
 // ActualTotalLoad.sync({force:true})
 // User.sync({force:true})
