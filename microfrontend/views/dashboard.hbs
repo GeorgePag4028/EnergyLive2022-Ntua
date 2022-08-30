@@ -1,0 +1,283 @@
+<div class="container2"> 
+
+<h6 hidden id="databack">{{data}} </h6>
+<h6 hidden id="dates">{{time}} </h6>
+<h6 hidden id="dataset">{{dataset}} </h6>
+<h6 hidden id="datasetname">{{datasetname}} </h6>
+
+<div class="container1">
+<div class="title">Choose type of Data</div>
+<form id="form1" action="/communication/dashboardac?googleId={{googleId}}" method="POST" style="display: block;">
+    <label>Date</label>
+    <input type="date" id="start" name="tripStart"
+       value="2022-01-15">
+    <div>
+        <label>Quanity</label>
+        <select name ="dataset" id = "dataset" onchange="toggle(this.value);">
+            <option value="actualTotalLoad" selected>Actual Total Load</option>
+            <option value="aggregatedGenerationPerType">Aggregated Generation Per Type</option>
+            <option value="physicalFlows">Physical Flows</option>
+        </select>
+        <label>Country</label>
+        <select name="country" id="country">
+            <option value="GR">Greece</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+						<option value="AL">Albania</option>
+					  <option value="AT">Austria</option>
+						<option value="BY">Belarus</option>
+						<option value="BE">Belgium</option>
+						<option value="BA">Bosnia Herzegovina</option>
+						<option value="BG">Bulgaria</option>
+						<option value="HR">Croatia</option>
+						<option value="CY">Cyprus</option>
+						<option value="CZ">Czech Republic</option>
+				 		<option value="DK">Denmark</option>
+				 		<option value="EE">Estonia</option>
+				 		<option value="FI">Finland</option>
+				 		<option value="FR">France</option>
+				 		<option value="GE">Georgia</option>
+				 		<option value="DE">Germany</option>
+				 		<option value="HU">Hungary</option>
+				 		<option value="IE">Ireland</option>
+				 		<option value="LV">Latvia</option>
+				 		<option value="LT">Lithuania</option>
+				 		<option value="LU">Luxembourg</option>
+				 		<option value="MT">Malta</option>
+				 		<option value="ME">Montenegro</option>
+				 		<option value="NL">Netherlands</option>
+				 		<option value="MK">North Macedonia</option>
+				 		<option value="NO">Norway</option>
+				 		<option value="PL">Poland</option>
+				 		<option value="PT">Portugal</option>
+				 		<option value="MD">Republic of Moldova</option>
+				 		<option value="RO">Romania</option>
+				 		<option value="RS">Serbia</option>
+				 		<option value="SK">Slovakia</option>
+				 		<option value="SI">Slovenia</option>
+				 		<option value="SE">Sweden</option>
+				 		<option value="CH">Switzerland</option>
+				 		<option value="TR">Turkey</option>
+				 		<option value="UA">Ukraine</option>
+				 		<option value="GB">United Kingdom</option>
+				 		<option value="RU">Russia</option>
+				 		<option value="AM">Armenia</option>
+				 		<option value="AZ">Azerbaijan</option>
+				 		<option value="XK">Kosovo</option>
+
+        </select>
+    </div>
+    <button class="button-38">Refresh</button>
+</form>
+
+<form id="form2" action="/communication/dashboardag?googleId={{googleId}}" method="POST" style="display: none;">
+    <label>Date</label>
+    <input type="date" id="start" name="tripStart"
+       value="2022-03-06">
+    <div>
+        <label>Quanity</label>
+        <select name ="dataset" id = "dataset" onchange="toggle(this.value);">
+            <option value="actualTotalLoad">Actual Total Load</option>
+            <option value="aggregatedGenerationPerType" selected>Aggregated Generation Per Type</option>
+            <option value="physicalFlows">Physical Flows</option>
+        </select>
+        <label>Country</label>
+        <select name="country" id="country">
+            <option value="GR">Greece</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+						<option value="AL">Albania</option>
+					  <option value="AT">Austria</option>
+						<option value="BY">Belarus</option>
+						<option value="BE">Belgium</option>
+						<option value="BA">Bosnia Herzegovina</option>
+						<option value="BG">Bulgaria</option>
+						<option value="HR">Croatia</option>
+						<option value="CY">Cyprus</option>
+						<option value="CZ">Czech Republic</option>
+				 		<option value="DK">Denmark</option>
+				 		<option value="EE">Estonia</option>
+				 		<option value="FI">Finland</option>
+				 		<option value="FR">France</option>
+				 		<option value="GE">Georgia</option>
+				 		<option value="DE">Germany</option>
+				 		<option value="HU">Hungary</option>
+				 		<option value="IE">Ireland</option>
+				 		<option value="LV">Latvia</option>
+				 		<option value="LT">Lithuania</option>
+				 		<option value="LU">Luxembourg</option>
+				 		<option value="MT">Malta</option>
+				 		<option value="ME">Montenegro</option>
+				 		<option value="NL">Netherlands</option>
+				 		<option value="MK">North Macedonia</option>
+				 		<option value="NO">Norway</option>
+				 		<option value="PL">Poland</option>
+				 		<option value="PT">Portugal</option>
+				 		<option value="MD">Republic of Moldova</option>
+				 		<option value="RO">Romania</option>
+				 		<option value="RS">Serbia</option>
+				 		<option value="SK">Slovakia</option>
+				 		<option value="SI">Slovenia</option>
+				 		<option value="SE">Sweden</option>
+				 		<option value="CH">Switzerland</option>
+				 		<option value="TR">Turkey</option>
+				 		<option value="UA">Ukraine</option>
+				 		<option value="GB">United Kingdom</option>
+				 		<option value="RU">Russia</option>
+				 		<option value="AM">Armenia</option>
+				 		<option value="AZ">Azerbaijan</option>
+				 		<option value="XK">Kosovo</option>
+        </select>
+        <label>Generation Type</label>
+        <select name="generationType" id="country">
+            <option value="Wind Onshore">Wind Onshore</option>
+            <option value="Fossil Coal-derived gas">Fossil Coal-derived gas</option>
+            <option value="Fossil Brown coal/Lignite">Fossil Brown coal/Lignite</option>
+            <option value="Biomass">Biomass</option>
+            <option value="Fossil Gas">Fossil Gas</option>
+            <option value="Fossil Oil shale">Fossil Oil shale</option>
+            <option value="Fossil Oil">Fossil Oil</option>
+            <option value="Hydro Run-of-river and poundage">Hydro Run-of-river and poundage</option>
+            <option value="Hydro Pumped Storage">Hydro Pumped Storage</option>
+            <option value="Fossil Hard coal">Fossil Hard coal</option>
+            <option value="Fossil Peat">Fossil Peat</option>
+            <option value="Nuclear">Nuclear</option>
+            <option value="Wind Offshore">Wind Offshore</option>
+            <option value="Hydro Water Reservoir">Hydro Water Reservoir</option>
+            <option value="Other renewable">Other renewable</option>
+            <option value="Geothermal">Geothermal</option>
+            <option value="Marine">Marine</option>
+            <option value="Solar">Solar</option>
+            <option value="Waste">Waste</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <button class="button-38">Refresh</button>
+</form>
+
+<form id="form3" action="/communication/dashboardp?googleId={{googleId}}" method="POST" style="display: none;">
+    <label>Date</label>
+    <input type="date" id="start" name="tripStart"
+       value="2022-06-29">
+    <div>
+        <label>Quanity</label>
+        <select name ="dataset" id = "dataset" onchange="toggle(this.value);">
+            <option value="actualTotalLoad">Actual Total Load</option>
+            <option value="aggregatedGenerationPerType">Aggregated Generation Per Type</option>
+            <option value="physicalFlows" selected>Physical Flows</option>
+        </select>
+        <label>Country (from)</label>
+        <select name="countryfrom" id="countryfrom">
+            <option value="GR">Greece</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+						<option value="AL">Albania</option>
+					  <option value="AT">Austria</option>
+						<option value="BY">Belarus</option>
+						<option value="BE">Belgium</option>
+						<option value="BA">Bosnia Herzegovina</option>
+						<option value="BG">Bulgaria</option>
+						<option value="HR">Croatia</option>
+						<option value="CY">Cyprus</option>
+						<option value="CZ">Czech Republic</option>
+				 		<option value="DK">Denmark</option>
+				 		<option value="EE">Estonia</option>
+				 		<option value="FI">Finland</option>
+				 		<option value="FR">France</option>
+				 		<option value="GE">Georgia</option>
+				 		<option value="DE">Germany</option>
+				 		<option value="HU">Hungary</option>
+				 		<option value="IE">Ireland</option>
+				 		<option value="LV">Latvia</option>
+				 		<option value="LT">Lithuania</option>
+				 		<option value="LU">Luxembourg</option>
+				 		<option value="MT">Malta</option>
+				 		<option value="ME">Montenegro</option>
+				 		<option value="NL">Netherlands</option>
+				 		<option value="MK">North Macedonia</option>
+				 		<option value="NO">Norway</option>
+				 		<option value="PL">Poland</option>
+				 		<option value="PT">Portugal</option>
+				 		<option value="MD">Republic of Moldova</option>
+				 		<option value="RO">Romania</option>
+				 		<option value="RS">Serbia</option>
+				 		<option value="SK">Slovakia</option>
+				 		<option value="SI">Slovenia</option>
+				 		<option value="SE">Sweden</option>
+				 		<option value="CH">Switzerland</option>
+				 		<option value="TR">Turkey</option>
+				 		<option value="UA">Ukraine</option>
+				 		<option value="GB">United Kingdom</option>
+				 		<option value="RU">Russia</option>
+				 		<option value="AM">Armenia</option>
+				 		<option value="AZ">Azerbaijan</option>
+				 		<option value="XK">Kosovo</option>
+        </select>
+        <label>Country (to)</label>
+        <select name="countryto" id="countryto">
+						<option value="AL">Albania</option>
+            <option value="GR">Greece</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+					  <option value="AT">Austria</option>
+						<option value="BY">Belarus</option>
+						<option value="BE">Belgium</option>
+						<option value="BA">Bosnia Herzegovina</option>
+						<option value="BG">Bulgaria</option>
+						<option value="HR">Croatia</option>
+						<option value="CY">Cyprus</option>
+						<option value="CZ">Czech Republic</option>
+				 		<option value="DK">Denmark</option>
+				 		<option value="EE">Estonia</option>
+				 		<option value="FI">Finland</option>
+				 		<option value="FR">France</option>
+				 		<option value="GE">Georgia</option>
+				 		<option value="DE">Germany</option>
+				 		<option value="HU">Hungary</option>
+				 		<option value="IE">Ireland</option>
+				 		<option value="LV">Latvia</option>
+				 		<option value="LT">Lithuania</option>
+				 		<option value="LU">Luxembourg</option>
+				 		<option value="MT">Malta</option>
+				 		<option value="ME">Montenegro</option>
+				 		<option value="NL">Netherlands</option>
+				 		<option value="MK">North Macedonia</option>
+				 		<option value="NO">Norway</option>
+				 		<option value="PL">Poland</option>
+				 		<option value="PT">Portugal</option>
+				 		<option value="MD">Republic of Moldova</option>
+				 		<option value="RO">Romania</option>
+				 		<option value="RS">Serbia</option>
+				 		<option value="SK">Slovakia</option>
+				 		<option value="SI">Slovenia</option>
+				 		<option value="SE">Sweden</option>
+				 		<option value="CH">Switzerland</option>
+				 		<option value="TR">Turkey</option>
+				 		<option value="UA">Ukraine</option>
+				 		<option value="GB">United Kingdom</option>
+				 		<option value="RU">Russia</option>
+				 		<option value="AM">Armenia</option>
+				 		<option value="AZ">Azerbaijan</option>
+				 		<option value="XK">Kosovo</option>
+        </select>
+    </div>
+    <button class="button-38">Refresh</button>
+</form>
+</div>
+<div class="leftdata">
+    <div class="upperdata">
+
+    <h5>Name: {{name}}</h5>
+    <h5>Email: {{email}} </h5>
+    </div>
+
+    <div id="diagram" style="width:100%; height:400px;"></div>
+    <hr>
+
+    <div class="downdata">
+    <button onclick="location.href = 'http://localhost:3000/renew?googleId={{googleId}}';" id="myButton" class="float-left submit-button" >Extend plan </button>
+    <h5>Days left: {{remaining}}</h5>
+    <h5>Last login : {{lastLogin}}</h5>
+    </div>
+</div>
+</div>

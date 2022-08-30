@@ -1,0 +1,22 @@
+<div class="container3">
+<div class="text">
+<h5>Name: {{name}}</h5>
+<br>
+<br>
+<h5>Email: {{email}}</h5>
+<br>
+<br>
+<h5>Last login: {{lastLogin}}</h5>
+<br>
+<br>
+</div>
+<div class="renewdays">
+<h5>Last days: {{days}}</h5>
+<form action="/renew/extentDays?googleId={{googleId}}" method="POST">
+    <label>Extend by(days):</label>
+    <input type="number" name = "extend_days">
+    <button class="button-38">Extend</button>
+    
+</form>
+</div>
+</div>
